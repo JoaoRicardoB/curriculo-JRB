@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=<device-width>, initial-scale=1.0">
+    <title>JoaoRicardoBarcelos</title>
+    <style>
+        *{
+            box-sizing: border-box; /*Inclui padding e bordas na largura do elemento*/
+            font-family: 'Times New Roman', Times, serif;
+        }
+        :root {
+            --background-color1: rgb(60, 78, 44);
+            --background-color2: rgb(103, 119, 79);
+            --background-color3: rgb(231, 240, 202);
+            --text-color1: white;
+            --text-color2: black;
+        }
+
+        body.dark-mode {
+            --background-color1: rgb(17, 31, 17);
+            --background-color2: rgb(48, 59, 48);
+            --background-color3: rgb(120, 133, 116);
+            --text-color1: rgb(181, 201, 175);
+            --text-color2: rgb(33, 39, 31);
+        }
+
+        body {
+            margin: 0 20%;
+            width: 60%;
+            background-image: url(imagens/fundo.jpg);
+            background-repeat: no-repeat; /* Evita que a imagem se repita */
+            background-position: center; /* Centraliza a imagem */
+            background-size: cover;
+            
+        }
+        
+        header {
+            margin-top: 1%;
+            margin-bottom: 1%;
+            position: -webkit-sticky;
+            position: sticky; /* Mantém elemento visível ao rolar a página */
+            top: 0;
+            height: 20%;
+            width: 100%;
+            z-index: 1000; /* Garante que fique acima do conteúdo */
+            border-radius: 5px;
+            border: solid 2px;
+            border-color:  black
+        }
+
+        h1 {
+            
+            background-color: var(--background-color1);
+            color: var(--text-color1);
+            text-align: center;
+            width: 100%;
+            font-size: 45px;
+            font-weight: 100;
+            margin: 0;
+            padding: 0 0 0 15%;
+            
+        }
+
+        ul {
+            
+            display: flex; /*Posiciona itens (li) na horizontal*/
+            background-color: var(--background-color2);
+            color:var(--text-color1);
+            text-align: center;
+            list-style: none; /*Remove marcadores*/
+            width: 100%;
+            height: 100%;
+            font-size: 25px;
+            margin: 0;
+            padding: 2px;
+        }
+        
+        li {
+            width: 25%;
+        }
+        
+        a:hover {
+            background-color: var(--background-color3);
+            color: var(--text-color2);
+            border-radius: 5px;
+            font-weight: bold;
+        }
+        
+        
+        
+        .menulink {
+            display: block; /*Expande o hover sobre todo o li e não somente sobre o texto da tag a*/
+            color: var(--text-color1);
+            text-decoration: none;/*Remove sublinhado*/
+        }
+        
+        section {
+            margin-top: 1%;
+            display: block;
+            background-color:var(--background-color3) ;
+            color: var(--text-color2);
+            border-radius: 5px;
+            border-color: black;
+            border: solid 2px;
+            padding: 0;
+            line-height: 1.5;
+            font-size: 20px;
+            scroll-margin-top: 15vh; /*Define uma margem superior ao navegar por links entre as seções da página, evitando que o cabeçalho se sobreponha aos elementos linkados*/
+            height: 82vh;
+        }
+        
+        h2{
+            text-align: center;
+            font-weight: lighter;
+            color: var(--text-color1);
+            background-color: var(--background-color2);
+            border-radius: 0 0 5px 5px;
+            width: 100%;
+            padding: 0;
+            margin: 0;
+            }
+        
+        p {
+            margin: 2% 7%;
+            font-size: 14pt;
+            text-align: justify;
+        }
+
+        table{
+            margin: 2% 5%;
+            text-align: center;
+            height: 50%;
+            border: 2px solid var(--background-color2); /* Define a espessura, o estilo e a cor da linha de grade */
+            border-radius: 5px;
+            border-collapse: collapse; /*Unifica/sobrepõe bordas vizinhas*/
+            
+        }
+        
+        th {
+            background-color: var(--background-color3);
+            border: 2px solid var(--background-color2);
+            border-radius: 5px;
+            border-collapse: collapse;
+        }
+        td{
+            background-color: var(--background-color3);
+            border: 2px solid var(--background-color2);
+            border-radius: 5px;
+            border-collapse: collapse;
+        }
+
+        .a{
+            color: var(--text-color1);
+            padding: 8px;
+        }
+        
+        .contato{
+            width: 50%;
+            padding: 3 px 25px 0 25px;
+            margin: 1% 30%;
+            font-size: 18pt;
+        }
+
+        .negrito{
+            font-weight: bolder;
+            font-size: 16pt
+        }
+        form {
+            padding: 0 1%;
+            margin: 0 10%;
+            color: var(--text-color1);
+            border: solid 2px var(--background-color1);
+            border-radius: 5px;
+            background-color: var(--background-color2);
+            
+        }
+        
+        label{
+            padding: 2% 0 0 0;
+        }
+        
+        input {
+            width: 38%;
+            height: 20%;
+            padding-bottom: 0;
+            border: solid 2px var(--background-color1);
+            border-radius: 5px;
+            background-color: var(--background-color3);
+            
+        }
+        
+        input::placeholder, textarea::placeholder{
+            font-size: 13pt;
+            color: var(--text-color2)
+
+        }
+        
+        textarea {
+            width: 100%;
+            margin: 0;
+            padding: 5px;
+            height: 35vh;
+            border: solid 2px;
+            border-radius: 5px;
+            border-color: var(--background-color1);
+            background-color: var(--background-color3);
+        }
+
+        button {
+            width: 100px;
+            border: solid 2px;
+            border-radius: 5px;
+            border-color: var(--background-color1);
+            float: right; /*Posiciona o elemento junto à direita*/
+            background-color: var(--background-color2);
+            color: var(--text-color1);
+            font-size: 12pt;
+            margin-right: 10%;
+            margin-top: 1%;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <button id="theme-toggle" style="float: right; margin: 0; width: 15%;">Alternar Tema</button>
+        <h1>Currículo Online</h1>
+        <!--Abaixo, criação de menu semântico <nav> para navegação pela página, referenciando as diferentes seções pelo id-->
+        <nav>
+            <ul>
+                <li><a href="#sobre" class="menulink">Sobre Mim</a></li>
+                <li><a href="#formacao" class="menulink">Formação</a></li>
+                <li><a href="#portfolio" class="menulink">Portfólio</a></li>
+                <li><a href="#contato" class="menulink">Contato</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+    <section id="sobre">
+        <h2>Sobre Mim</h2>
+        <p style="margin-top: 4%;">Olá, meu nome é <span class="negrito">João Ricardo Barcelos</span>!</p><!--aplicação de CSS inline-->
+        <p>Tenho 43 anos, nasci na cidade de Criciúma (SC) e atualmente moro em Florianópolis (SC).</p>
+        <p>Graduado em Odontologia em 2005, atuei como Cirurgião-Dentista na rede pública e privada até o ano de 2008.</p>
+        <p>Desde então, atuo como servidor público municipal da Prefeitura Municipal de Florianópolis, no cargo de Fiscal de Vigilância em Saúde, realizando fiscalizações principalmente em serviços de saúde, como hospitais, maternidades, UTIs, clínicas de diagnóstico
+            por imagem, entre outros.</p>
+        <p>Em 2025 inciei o curso de Tecnologia em Ciência de Dados, tendo por objetivo desenvolver habilidades e conhecimentos na área de TI, visando a aplicação em uma carreira paralela.</p>
+        <p>Nas horas de lazer, curto passar tempo em família ou com amigos, ouvir música, tocar violão, cozinhar, praticar atividade física na natureza...
+        </p>
+    </section>
+
+    <section id="formacao";>
+        <h2>Formação</h2>
+        <table >
+            <colgroup>
+                <col style="width: 40%;"><!--Dimensionamento de coluna da tabela-->
+                <col style="width: 40%;">
+                <col style="width: 20%;">
+            </colgroup>
+            <tr>
+                <th>CURSO</th>
+                <th>INSTITUIÇÃO</th>
+                <th>ANO DE CONCLUSÃO</th>
+            </tr>
+            <tr>
+                <td>Graduação em Odontologia</td>
+                <td>Universidade Federal de SC</td>
+                <td style="text-align: center;">2005</td>
+            </tr>
+            <tr>
+                <td>Especialização em Vigilância Sanitária</td>
+                <td>Universidade Católica Dom Bosco</td>
+                <td style="text-align: center;">2011</td>
+            </tr>
+            <tr>
+                <td>Especialização em Processos Educacionais na Saúde</td>
+                <td>Instituto Sírio-Libanês</td>
+                <td style="text-align: center;">2016</td>
+            </tr>
+            <tr>
+                <td>Tecnologia em Ciência de Dados</td>
+                <td>UNINTER</td>
+                <td style="text-align: center;">Em curso</td>
+            </tr>
+        </table>
+        
+        <p style="margin: 1% 5%;"><span class="negrito">Idiomas:</span> Inglês e espanhol básicos.</p>
+        <p style="margin: 1% 5%";>
+            <span class="negrito">Informações Adicionais:</span> cursos de capacitação relacionados à Vigilância Sanitária, em temas como Controle de Infecção Hospitalar, Segurança do Paciente, Sistema de Gestão da Qualidade, Gerenciamento de Resíduos, Serviços de Hemoterapia, Centros de Reprodução Humana Assistida, Serviços de Diagnóstico por Imagem, Centros de Material e Esterilização...</p>
+
+    </section>
+    <section id="portfolio">
+        <h2 >Portfólio</h2>
+        <p style="font-size: 20pt; text-align: justify; padding: 10%; margin: 10%; color: var(--text-color1); border: solid 2px var(--background-color1); border-radius: 5px; background-color: var(--background-color2);">Este é meu primeiro trabalho na área de Desenvolvimento Web:
+        <a href="index.html" class="a">Currículo Online</a>
+        </p>
+        
+    </section>
+    <section id="contato" style="margin-bottom: 3%;">
+        <h2>Contato</h2>
+            <div>
+            
+                <div class="contato">
+                    <span class="negrito">Nome:</span> João Ricardo Barcelos <br>
+                    <span class="negrito">Telefone/Whatsapp:</span> 48 996301903<br>
+                    <span class="negrito">E-mail:</span> jrbarcelos@hotmail.com <br>
+                </div>
+                
+                <form id="formulario">
+    
+                    <label for="nome">Nome:</label>
+                    <input type="text" id="nome" name="nome" placeholder="Digite seu nome" required>
+
+                    <label for="email" style="margin-left: 3%;">E-mail:</label>
+                    <input type="email" id="email" name="email" placeholder="seu@email.com">
+                    <br>
+                    
+                    <label for="mensagem"></label>
+                    <textarea id="mensagem" name="mensagem" placeholder="Escreva sua mensagem..."></textarea>
+                    <br>
+
+                </form>
+                <button type="submit" form="formulario">Enviar</button>
+                <p id="mensagemErro" class="error"></p>
+            </div>
+    </section>
+    
+    <script>
+        // 1. Validação de preenchimento do formulário de contato
+        document.getElementById('formulario').addEventListener('submit', function(event) {
+        // Captura dos campos
+        const nome = document.getElementById('nome').value.trim();
+        const email = document.getElementById('email').value.trim();
+        const mensagem = document.getElementById('mensagem').value.trim();
+        const mensagemErro = document.getElementById('mensagemErro');
+        
+        // Limpa erro anterior
+        mensagemErro.textContent = "";
+
+        // Verifica se os foram preenchidos, se não estão vazios
+        if (nome === "" || email === "" || mensagem === "") {
+            alert("Por favor, preencha todos os campos.");
+            event.preventDefault(); // Impede o envio
+            return false;
+        }
+
+        // Verifica o formato do e-mail com Regex
+        // O padrão básico usado é: texto + @ + texto + . + texto
+        const emailRegex = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6}$/;
+        if (!emailRegex.test(email)) {
+            alert("Por favor, insira um e-mail válido (exemplo: usuario@dominio.com).");
+            event.preventDefault();
+            return false;
+        }
+
+        // Após validação ok, confirma o envio do formulário
+        alert("Mensagem enviada com sucesso!");
+    });
+        // 2. Alteração de Tema
+        const toggleButton = document.getElementById('theme-toggle');
+        const body = document.body;
+
+        // Carrega o tema salvo (preferência do usuário) ao abrir a página
+        if (localStorage.getItem('theme') === 'dark') {
+            body.classList.add('dark-mode');
+    }
+
+        // Adiciona o evento de clique no botão
+        toggleButton.addEventListener('click', () => {
+            body.classList.toggle('dark-mode');
+            
+            // Salva a preferência no localStorage
+            if (body.classList.contains('dark-mode')) {
+                localStorage.setItem('theme', 'dark');
+            }
+            else {
+                localStorage.setItem('theme', 'light');
+            }
+        });
+
+    </script>
+</body>
+
+</html>
