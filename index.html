@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=<device-width>, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>JoaoRicardoBarcelos</title>
     <style>
         *{
@@ -27,21 +27,12 @@
         }
 
         body {
-            width: 100%;
+            width: 100vw;
             margin: 0;
             padding: 10px
             
         }
-        @media (min-width: 769px) {
-            body {
-                width: 60%;
-                max-width: 1200px;
-                margin: 0 auto;
-                background-image: url(imagens/fundo.jpg);
-                background-repeat: no-repeat; /* Evita que a imagem se repita */
-                background-position: center; /* Centraliza a imagem */
-                background-size: cover;
-            }}
+
         
         header {
             margin-top: 0;
@@ -64,7 +55,7 @@
             text-align: center;
             width: 100%;
             height: 11vh;
-            font-size: 44pt;
+            font-size: 14pt;
             font-weight: 100;
             margin: 0;
             padding: 0 0 0 15%;
@@ -78,7 +69,7 @@
             text-align: center;
             list-style: none; /*Remove marcadores*/
             width: 100%;
-            font-size: 20pt;
+            font-size: 12pt;
             margin: 0;
             padding: 0;
         }
@@ -109,8 +100,7 @@
             border-color: black;
             border: solid 2px;
             padding: 0;
-            line-height: 1.5;
-            font-size: 14pt;
+            font-size: 12pt;
             scroll-margin-top: 17.5vh; /*Define uma margem superior ao navegar por links entre as seções da página, evitando que o cabeçalho se sobreponha aos elementos linkados*/
             height: 82vh;
         }
@@ -125,10 +115,10 @@
             padding: 0;
             margin: 0;
             }
-        
+            
         p {
             margin: 2% 7%;
-            font-size: 14pt;
+            font-size: 12pt;
             text-align: justify;
         }
 
@@ -160,16 +150,26 @@
             padding: 1% 2%;
         }
         
+        #textport {
+            text-align: center;
+            padding: 10%;
+            margin: 10%;
+            color: var(--text-color1);
+            border: solid 2px var(--background-color1);
+            border-radius: 5px;
+            background-color: var(--background-color2);
+        }
+
         .contato{
             width: 100%;
             padding: 1%;
             margin: 0 30%;
-            font-size: 18pt;
+            font-size: 12pt;
         }
-
+        
         .negrito{
             font-weight: bolder;
-            font-size: 16pt
+            font-size: 12pt
         }
         form {
             padding: 0 1%;
@@ -196,9 +196,9 @@
         }
         
         input::placeholder, textarea::placeholder{
-            font-size: 13pt;
+            font-size: 12pt;
             color: var(--text-color2)
-
+            
         }
         
         textarea {
@@ -211,7 +211,7 @@
             border-color: var(--background-color1);
             background-color: var(--background-color3);
         }
-
+        
         button {
             width: 10%;
             border: solid 2px;
@@ -224,7 +224,27 @@
             margin-right: 10%;
             margin-top: 1%;
         }
-    </style>
+        @media (min-width: 769px) { /*Configuração para telas maiores*/
+            body {
+                width: 60%;
+                max-width: 1200px;
+                margin: 0 auto;
+                background-image: url(imagens/fundo.jpg);
+                background-repeat: no-repeat; /* Evita que a imagem se repita */
+                background-position: center; /* Centraliza a imagem */
+                background-size: cover;
+            }
+            h1 {font-size: 40pt;}
+            h2 {font-size: 20pt;}
+            ul {font-size: 20pt;}
+            section {margin: 2vh 0;}
+            p {font-size: 14pt;}
+            .contato {font-size: 18pt;}
+            .negrito {font-size: 16pt;}
+            input::placeholder, textarea::placeholder{font-size: 13pt;}
+            #textport {font-size: 24pt;}
+        }
+        </style>
 </head>
 
 <body>
@@ -290,13 +310,13 @@
         </table>
         
         <p style="margin: 1% 5%;"><span class="negrito">Idiomas:</span> Inglês e espanhol básicos.</p>
-        <p style="margin: 1% 5%";>
+        <p style="margin: 1% 5%";><br>
             <span class="negrito">Informações Adicionais:</span> cursos de capacitação relacionados à Vigilância Sanitária, em temas como Controle de Infecção Hospitalar, Segurança do Paciente, Sistema de Gestão da Qualidade, Gerenciamento de Resíduos, Serviços de Hemoterapia, Centros de Reprodução Humana Assistida, Serviços de Diagnóstico por Imagem, Centros de Material e Esterilização...</p>
 
     </section>
     <section id="portfolio">
         <h2 >Portfólio</h2>
-        <p style="font-size: 20pt; text-align: justify; padding: 10%; margin: 10%; color: var(--text-color1); border: solid 2px var(--background-color1); border-radius: 5px; background-color: var(--background-color2);">Este é meu primeiro trabalho na área de Desenvolvimento Web:
+        <p id="textport">Este é meu primeiro trabalho na área de Desenvolvimento Web:<br><br>
         <a href="index.html" class="a">Currículo Online</a>
         </p>
         
@@ -304,13 +324,13 @@
     <section id="contato" style="margin-bottom: 3%;">
         <h2>Contato</h2>
             <div>
-            
+            <br>
                 <div class="contato">
                     <span class="negrito">Nome:</span> João Ricardo Barcelos <br>
                     <span class="negrito">Telefone/Whatsapp:</span> 48 996301903<br>
                     <span class="negrito">E-mail:</span> jrbarcelos@hotmail.com <br>
                 </div>
-                
+                <br>
                 <form id="formulario">
     
                     <label for="nome">Nome:</label>
